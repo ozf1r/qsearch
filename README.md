@@ -11,4 +11,6 @@ You need to edit the path to topics.xml and set my $module = "FinPR"; to the dia
 
 ./qsearch.pl topic
 
+Use qadd.pl to add topics to the database, if you want.
+
 # that's all!
