@@ -13,7 +13,7 @@ if (@ARGV != 1) {
 my $tag_to_find = $ARGV[0];
 
 # Parse the XML file
-my $xml_file = '/home/user/perl/qbiblia/topics.xml';  # Replace with the actual XML file name
+my $xml_file = 'topics.xml';  # Replace with the actual XML file name
 my $parser = XML::LibXML->new;
 my $doc = $parser->parse_file($xml_file);
 
