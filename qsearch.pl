@@ -13,9 +13,11 @@ if (@ARGV != 1) {
 my $tag_to_find = $ARGV[0];
 
 # Parse the XML file
-my $xml_file = 'topics.xml';  # Replace with the actual XML file name
+my $xml_file = '/home/user/perl/qbiblia/topics.xml';  # Replace with the actual XML file name
 my $parser = XML::LibXML->new;
 my $doc = $parser->parse_file($xml_file);
+
+print "Searching for $tag_to_find\n";
 
 # Find tags matching the provided tag content
 my @matching_tags = $doc->findnodes("/tags/tag[\@content='$tag_to_find']");
@@ -23,7 +25,7 @@ my @matching_tags = $doc->findnodes("/tags/tag[\@content='$tag_to_find']");
 # Print verses for matching tags
 foreach my $tag (@matching_tags) {
     my $content = $tag->getAttribute('content');
-    print "Tag: $content\n";
+    # print "Tag: $content\n";
 
     my @verses = $tag->findnodes('verse');
     foreach my $verse (@verses) {
